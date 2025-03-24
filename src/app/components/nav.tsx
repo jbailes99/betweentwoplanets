@@ -54,7 +54,10 @@ export default function Nav() {
             Artwork
           </a>
           <a href='#' className='hover:text-gray-300'>
-            Inspiration
+            Meet the crew
+          </a>
+          <a href='#' className='hover:text-gray-300'>
+            Behind the scenes
           </a>
           <a href='#' className='hover:text-gray-300'>
             More info
