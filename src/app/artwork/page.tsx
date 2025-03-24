@@ -27,10 +27,9 @@ const ArtworkGallery: React.FC = () => {
 
   return (
     <div
-      className='min-h-screen w-full bg-cover bg-bottom'
+      className='min-h-screen w-full bg-fixed bg-cover bg-bottom'
       style={{
         backgroundImage: "url('/cover2.png')",
-        backgroundAttachment: 'fixed', // Keep the background fixed during scrolling (optional)
       }}
     >
       <div className='container mx-auto px-6 py-10'>
