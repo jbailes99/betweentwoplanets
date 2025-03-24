@@ -1,10 +1,20 @@
+'use client'
+import React, { useState } from 'react'
+import { Bars3Icon } from '@heroicons/react/24/outline' // Import the Heroicons icon
+
 export const AcmeLogo = () => {
   return <img src='/logo.png' alt='Acme Logo' className='w-12 h-12 rounded-full' />
 }
 
 export default function Nav() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) // State for mobile menu toggle
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen) // Toggle mobile menu state
+  }
+
   return (
-    <nav className='fixed top-0 left-0 w-full py-4 px-6 bg-purple-400/30 backdrop-blur-lg bg-opacity-30 z-50'>
+    <nav className='fixed top-0 left-0 w-full py-4 px-6 bg-purple-300/10 backdrop-blur-lg bg-opacity-30 z-50'>
       <div className='container mx-auto flex justify-between items-center'>
         {/* Logo */}
         <div className='flex items-center'>
@@ -26,22 +36,31 @@ export default function Nav() {
           </a>
         </div>
 
-        {/* Buttons for Login and Sign Up */}
-        {/* <div className='flex items-center gap-4'>
-          <a href='#' className='text-white hover:text-gray-300'>
-            Login
-          </a>
-          <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Sign Up</button>
-        </div> */}
+        {/* Mobile Navbar Hamburger */}
+        <div className='sm:hidden'>
+          <button
+            className='text-white'
+            onClick={toggleMobileMenu} // Toggle menu visibility
+          >
+            <Bars3Icon className='w-6 h-6' /> {/* Use Heroicons hamburger menu icon */}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navbar */}
-      <div className='sm:hidden'>
-        <button className='text-white'>
-          {/* Hamburger menu icon can be added here */}
-          <span className='material-icons'>menu</span>
-        </button>
-      </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className='sm:hidden flex flex-col gap-4 w-1/2 text-center items-center justify-center text-xl rounded-xl mx-auto text-white '>
+          <a href='/artwork' className='hover:text-gray-300 '>
+            Artwork
+          </a>
+          <a href='#' className='hover:text-gray-300'>
+            Inspiration
+          </a>
+          <a href='#' className='hover:text-gray-300'>
+            More info
+          </a>
+        </div>
+      )}
     </nav>
   )
 }
