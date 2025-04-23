@@ -4,7 +4,7 @@ import React from 'react'
 const MoreInfo: React.FC = () => {
   return (
     <div className='min-h-screen pt-18 w-full bg-[url("/cover2.png")] bg-cover bg-center bg-no-repeat bg-fixed'>
-      <div className='container mx-auto px-6 py-10'>
+      <div className='container mx-auto sm:px-6  py-10'>
         <div className='text-center text-white w-full bg-gradient-to-b from-green-600/20 to-purple-600/20 p-8 shadow-2xl border-2 border-green-900/50 rounded-xl max-w-11/12 mx-auto backdrop-blur-sm'>
           <h1 className='text-4xl md:text-5xl font-bold uppercase tracking-wider mb-6 bg-gradient-to-r from-green-400 via-purple-400 to-orange-200 text-transparent bg-clip-text'>
             More Information

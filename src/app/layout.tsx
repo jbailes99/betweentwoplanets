@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from './components/nav'
-import ViewportHeight from './components/viewport-height'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,11 +26,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ViewportHeight />
-        <div className='fullscreen-fix'>
-          <Nav />
-          {children}
-        </div>
+        <Nav />
+        {children}
       </body>
     </html>
   )
