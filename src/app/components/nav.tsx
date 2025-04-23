@@ -25,17 +25,18 @@ export default function Nav() {
 
         {/* Nav Links for Desktop */}
         <div className='hidden sm:flex gap-8 text-white'>
-          <a href='/artwork' className='hover:text-gray-300'>
-            Artwork
+          <a href='/' className='hover:text-gray-300'>
+            Home
           </a>
-          <a href='#' className='hover:text-gray-300'>
+          <a href='/meet-the-crew' className='hover:text-gray-300'>
             Meet the crew
           </a>
-          <a href='#' className='hover:text-gray-300'>
-            Behind the scenes
-          </a>
-          <a href='#' className='hover:text-gray-300'>
+
+          <a href='/more-info' className='hover:text-gray-300'>
             More info
+          </a>
+          <a href='/artwork' className='hover:text-gray-300'>
+            Artwork
           </a>
         </div>
 
@@ -53,17 +54,18 @@ export default function Nav() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className='sm:hidden flex flex-col gap-4 w-1/2 text-center items-center justify-center text-xl rounded-xl mx-auto text-white '>
-          <a href='/artwork' className='hover:text-gray-300 '>
-            Artwork
+          <a href='/' className='hover:text-gray-300'>
+            Home
           </a>
-          <a href='#' className='hover:text-gray-300'>
+          <a href='/meet-the-crew' className='hover:text-gray-300'>
             Meet the crew
           </a>
-          <a href='#' className='hover:text-gray-300'>
-            Behind the scenes
-          </a>
-          <a href='#' className='hover:text-gray-300'>
+
+          <a href='/more-info' className='hover:text-gray-300'>
             More info
+          </a>
+          <a href='/artwork' className='hover:text-gray-300 '>
+            Artwork
           </a>
         </div>
       )}
