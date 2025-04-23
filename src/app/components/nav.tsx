@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Bars3Icon } from '@heroicons/react/24/outline' // Import the Heroicons icon
+import { usePathname } from 'next/navigation'
 
 export const AcmeLogo = () => {
   return <img src='/logo.png' alt='Acme Logo' className='w-12 h-12 rounded-full' />
@@ -8,9 +9,14 @@ export const AcmeLogo = () => {
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) // State for mobile menu toggle
+  const pathname = usePathname()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen) // Toggle mobile menu state
+  }
+
+  const isActive = (path: string) => {
+    return pathname === path
   }
 
   return (
@@ -53,18 +59,41 @@ export default function Nav() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='sm:hidden flex flex-col gap-4 w-1/2 text-center items-center justify-center text-xl rounded-xl mx-auto text-white '>
-          <a href='/' className='hover:text-gray-300'>
+        <div className='sm:hidden flex flex-col gap-4 w-1/2 text-center items-center justify-center text-xl rounded-xl mx-auto text-white'>
+          <a
+            href='/'
+            className={`hover:text-gray-300 transition-all duration-300 transform hover:scale-110 ${
+              isActive('/') ? 'text-purple-400 scale-110 font-bold' : ''
+            }`}
+            onClick={toggleMobileMenu}
+          >
             Home
           </a>
-          <a href='/meet-the-crew' className='hover:text-gray-300'>
+          <a
+            href='/meet-the-crew'
+            className={`hover:text-gray-300 transition-all duration-300 transform hover:scale-110 ${
+              isActive('/meet-the-crew') ? 'text-purple-400 scale-110 font-bold' : ''
+            }`}
+            onClick={toggleMobileMenu}
+          >
             Meet the crew
           </a>
-
-          <a href='/more-info' className='hover:text-gray-300'>
+          <a
+            href='/more-info'
+            className={`hover:text-gray-300 transition-all duration-300 transform hover:scale-110 ${
+              isActive('/more-info') ? 'text-purple-400 scale-110 font-bold' : ''
+            }`}
+            onClick={toggleMobileMenu}
+          >
             More info
           </a>
-          <a href='/artwork' className='hover:text-gray-300 '>
+          <a
+            href='/artwork'
+            className={`hover:text-gray-300 transition-all duration-300 transform hover:scale-110 ${
+              isActive('/artwork') ? 'text-purple-400 scale-110 font-bold' : ''
+            }`}
+            onClick={toggleMobileMenu}
+          >
             Artwork
           </a>
         </div>
